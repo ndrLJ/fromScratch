@@ -1,0 +1,90 @@
+.footer {
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  background-color: $d-black;
+
+  &__links {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 3.0625rem;
+
+    @include breakpoint-up (desktop) {
+      flex-direction: row;
+    }
+
+    &__logo {
+      height: 3rem;
+
+      img {
+        width: 9.8125rem;
+        height: 1.875rem;
+      }
+    }
+
+    &__menu {
+      flex-direction: row;
+      height: 3rem;
+
+      p {
+        color: $white;
+        font-family: Manrope-ExtraLight_Bold, sans-serif;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: -0.17px;
+        line-height: 22.5px;
+        text-align: left;
+
+        &:not(:first-child) {
+          padding-left: 0.5rem;
+        }
+
+        @include breakpoint-up (tablet) {
+          &:not(:first-child) {
+            padding-left: 1rem;
+          }
+        }
+
+        @include breakpoint-up (desktop) {
+          &:not(:first-child) {
+            padding-left: 1.5rem;
+          }
+        }
+
+        @include breakpoint-up (widescreen) {
+          &:not(:first-child) {
+            padding-left: 3rem;
+          }
+        }
+      }
+    }
+
+    /*I downloaded a new set of matching icons for social media, as the size of the original files provided by
+    the handoff was inaccurate (should be 16x16px).*/
+    &__media {
+      flex-direction: row;
+      height: 3rem;
+
+      .discord, .twitter, .instagram {
+        margin: 1rem;
+      }
+
+      .twitter, .instagram {
+        margin-left: 1.5rem;
+      }
+    }
+  }
+
+  &__copyright {
+    margin-top: 1.875rem;
+    margin-bottom: 1.5rem;
+    /*In my opinion, color #E1E4EA appears to be too white compared to the design. I would use a darker shade
+    of grey in this case. I used the values provided by the handoff.*/
+    color: $m-grey;
+    font-family: Manrope-Medium, sans-serif;
+    font-size: 12px;
+    letter-spacing: -0.15px;
+    line-height: 22.5px;
+    text-align: left;
+  }
+}
